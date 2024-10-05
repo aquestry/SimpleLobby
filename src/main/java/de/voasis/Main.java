@@ -30,6 +30,7 @@ public class Main {
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
 
+
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
         if(vsecret != null) {
             VelocityProxy.enable(vsecret);
