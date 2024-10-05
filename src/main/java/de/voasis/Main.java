@@ -63,7 +63,8 @@ public class Main {
         } else {
             setDefault();
             System.out.println("Default-Config created.");
-        }}
+        }
+    }
     public static void setDefault() {
         Properties props = new Properties();
         props.setProperty("secret", "123456");
