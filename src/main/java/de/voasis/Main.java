@@ -13,7 +13,6 @@ import net.minestom.server.instance.block.Block;
 
 public class Main {
     public static void main(String[] args) {
-        String vsecret = System.getenv("SECRET");
         MinecraftServer minecraftServer = MinecraftServer.init();
 
         int port = 25565;
@@ -32,10 +31,14 @@ public class Main {
 
 
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
-        if(vsecret != null) {
-            System.out.println("V-Secret: " + vsecret);
+        String vsecret = System.getenv("SECRET");
+        if (vsecret == null) {
+            System.out.println("SECRET environment variable not found");
+        } else {
+            System.out.println("SECRET is: " + vsecret);
             VelocityProxy.enable(vsecret);
         }
+
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             final Player player = event.getPlayer();
