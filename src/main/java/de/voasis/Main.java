@@ -10,14 +10,11 @@ import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
-import java.io.*;
-import java.util.Properties;
-import java.util.TreeMap;
 
 public class Main {
-    private static String vsecret;
     public static void main(String[] args) {
-        loadConfig();
+        String vsecret = System.getenv("SECRET");
+
         MinecraftServer minecraftServer = MinecraftServer.init();
 
         int port = 25565;
@@ -35,8 +32,9 @@ public class Main {
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
 
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
-
-        VelocityProxy.enable(vsecret);
+        if(vsecret != null) {
+            VelocityProxy.enable(vsecret);
+        }
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             final Player player = event.getPlayer();
@@ -49,33 +47,4 @@ public class Main {
         minecraftServer.start("0.0.0.0", port);
     }
 
-    public static void loadConfig() {
-        File configFile = new File("config.properties");
-        if (configFile.exists()) {
-            try (FileReader reader = new FileReader(configFile)) {
-                Properties props = new Properties();
-                props.load(reader);
-                vsecret = props.getProperty("secret","123456");
-
-            } catch (IOException ex) {
-                System.out.println("Error loading config: " + ex.getMessage());
-            }
-        } else {
-            setDefault();
-            System.out.println("Default-Config created.");
-        }
-    }
-    public static void setDefault() {
-        Properties props = new Properties();
-        props.setProperty("secret", "123456");
-
-        Properties sortedProps = new Properties();
-        sortedProps.putAll(new TreeMap<>(props));
-        try (OutputStream out = new FileOutputStream("config.properties")) {
-            sortedProps.store(out, "Server Configuration by Aquestry");
-        } catch (IOException e) {
-            System.out.println("Error creating config: " + e.getMessage());
-        }
-        loadConfig();
-    }
 }
