@@ -13,29 +13,15 @@ import net.minestom.server.instance.block.Block;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("v2 by Aquestry");
         MinecraftServer minecraftServer = MinecraftServer.init();
-
-        int port = 25565;
-        for (int i = 0; i < args.length; i++) {
-            if (args[i].equals("-p") && i + 1 < args.length) {
-                try {
-                    port = Integer.parseInt(args[i + 1]);
-                } catch (NumberFormatException e) {
-                    System.out.println("No Port given, using 25565");
-                }
-            }
-        }
-
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
-
-
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
         String vsecret = System.getenv("SECRET");
         if (vsecret == null) {
             System.out.println("SECRET environment variable not found");
         } else {
-            System.out.println("SECRET is: " + vsecret);
             VelocityProxy.enable(vsecret);
         }
 
@@ -47,7 +33,6 @@ public class Main {
         });
 
         instanceContainer.setChunkSupplier(LightingChunk::new);
-        System.out.println("Starting on Port: " + port);
-        minecraftServer.start("0.0.0.0", port);
+        minecraftServer.start("0.0.0.0", 25565);
     }
 }
