@@ -7,4 +7,5 @@ WORKDIR /app
 
 COPY target/server.jar /app/server.jar
 
-CMD ["java", "-jar", "server.jar"]
+ENTRYPOINT ["java", "-jar", "server.jar"]
+CMD ["SECRET=Velocity-Server-Secret"]
