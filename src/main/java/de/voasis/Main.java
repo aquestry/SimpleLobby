@@ -14,7 +14,6 @@ import net.minestom.server.instance.block.Block;
 public class Main {
     public static void main(String[] args) {
         String vsecret = System.getenv("SECRET");
-
         MinecraftServer minecraftServer = MinecraftServer.init();
 
         int port = 25565;
