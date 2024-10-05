@@ -18,11 +18,14 @@ public class Main {
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
-        String vsecret = System.getenv("SECRET");
-        if (vsecret == null) {
-            System.out.println("SECRET environment variable not found");
-        } else {
-            VelocityProxy.enable(vsecret);
+        String vsecret = "SECRET";
+
+        for (String s : args) {
+            if(s.startsWith("SECRET=")) {
+                vsecret = s.replace("SECRET=", "");
+                VelocityProxy.enable(vsecret);
+                System.out.println("v-secret: " + vsecret);
+            }
         }
 
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();

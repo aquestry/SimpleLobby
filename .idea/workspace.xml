@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-server.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.jar" afterDir="false" />
     </list>
@@ -39,23 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.SimpleLobby [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.SimpleLobby [clean,package].executor": "Run",
+    "Maven.SimpleLobby [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="SimpleLobby [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+    <configuration name="SimpleLobby [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -67,7 +71,6 @@
             </option>
             <option name="goals">
               <list>
-                <option value="clean" />
                 <option value="package" />
               </list>
             </option>
@@ -109,7 +112,7 @@
       <workItem from="1727601800438" duration="1000" />
       <workItem from="1727601807235" duration="4000" />
       <workItem from="1728145889757" duration="1947000" />
-      <workItem from="1728149994357" duration="2138000" />
+      <workItem from="1728149994357" duration="2842000" />
     </task>
     <task id="LOCAL-00001" summary="Add">
       <option name="closed" value="true" />
@@ -215,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728151842239</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update">
+      <option name="closed" value="true" />
+      <created>1728152263410</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728152263410</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
