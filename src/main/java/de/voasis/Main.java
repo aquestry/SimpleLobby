@@ -33,6 +33,7 @@ public class Main {
 
         instanceContainer.setGenerator(unit -> unit.modifier().fillHeight(0, 40, Block.GRASS_BLOCK));
         if(vsecret != null) {
+            System.out.println("V-Secret: " + vsecret);
             VelocityProxy.enable(vsecret);
         }
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
