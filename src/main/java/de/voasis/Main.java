@@ -50,5 +50,4 @@ public class Main {
         System.out.println("Starting on Port: " + port);
         minecraftServer.start("0.0.0.0", port);
     }
-
 }
