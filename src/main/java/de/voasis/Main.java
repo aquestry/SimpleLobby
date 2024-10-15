@@ -31,6 +31,7 @@ public class Main {
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             final Player player = event.getPlayer();
+            System.out.println("Player configuration event for " + player.getUsername());
             event.setSpawningInstance(instanceContainer);
             player.setRespawnPoint(new Pos(0, 41, 0));
         });
