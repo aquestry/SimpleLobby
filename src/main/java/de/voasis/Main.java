@@ -5,7 +5,6 @@ import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
-import net.minestom.server.event.player.PlayerPacketEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
@@ -30,15 +29,13 @@ public class Main {
         }
 
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
-        globalEventHandler.addListener(PlayerPacketEvent.class, event -> {
-            final Player player = event.getPlayer();
-            System.out.println("Player packet event for " + player.getUsername());
-        });
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             final Player player = event.getPlayer();
             System.out.println("Player configuration event for " + player.getUsername());
             event.setSpawningInstance(instanceContainer);
             player.setRespawnPoint(new Pos(0, 41, 0));
+
+
         });
 
         instanceContainer.setChunkSupplier(LightingChunk::new);
