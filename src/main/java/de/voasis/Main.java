@@ -10,7 +10,6 @@ import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("v2 by Aquestry");
@@ -34,8 +33,6 @@ public class Main {
             System.out.println("Player configuration event for " + player.getUsername());
             event.setSpawningInstance(instanceContainer);
             player.setRespawnPoint(new Pos(0, 41, 0));
-
-
         });
 
         instanceContainer.setChunkSupplier(LightingChunk::new);
