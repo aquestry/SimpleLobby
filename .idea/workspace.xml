@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update to 1.21.2">
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +194,7 @@
       <workItem from="1729710775458" duration="280000" />
       <workItem from="1729795436499" duration="57000" />
       <workItem from="1729857048823" duration="227000" />
-      <workItem from="1730025785585" duration="2443000" />
+      <workItem from="1730025785585" duration="2823000" />
     </task>
     <task id="LOCAL-00001" summary="Add">
       <option name="closed" value="true" />
@@ -404,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729711034836</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update">
+      <option name="closed" value="true" />
+      <created>1730036471500</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730036471500</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,8 +420,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Update to 1.21.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to 1.21.2" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
