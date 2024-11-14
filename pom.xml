@@ -17,11 +17,6 @@
             <artifactId>minestom-snapshots</artifactId>
             <version>1_21_2-febfe26a2c</version>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.4.11</version>
-        </dependency>
     </dependencies>
     <build>
         <finalName>server</finalName>
