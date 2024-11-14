@@ -5,6 +5,7 @@ ENV PATH="$JAVA_HOME/bin:$PATH"
 
 WORKDIR /app
 
-COPY target/server.jar /app/server.jar
+COPY target/server.jar server.jar
+COPY target/lobby lobby
 
 CMD ["java", "-jar", "server.jar"]

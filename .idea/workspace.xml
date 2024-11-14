@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SimpleLobby-1.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/SimpleLobby-1.0-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +62,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\IdeaProjects\SimpleLobby\src\main\resources" />
+      <recent name="C:\Users\anton\IdeaProjects\SimpleLobby\src\main\resources\lobby" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn dependency:tree -Ddetail=true" />
@@ -198,6 +210,9 @@
       <workItem from="1730037614327" duration="167000" />
       <workItem from="1731008311581" duration="130000" />
       <workItem from="1731072374948" duration="14000" />
+      <workItem from="1731078712052" duration="1411000" />
+      <workItem from="1731086982697" duration="15000" />
+      <workItem from="1731585772209" duration="1648000" />
     </task>
     <task id="LOCAL-00001" summary="Add">
       <option name="closed" value="true" />
@@ -447,7 +462,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731008359598</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Update">
+      <option name="closed" value="true" />
+      <created>1731080403039</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1731080403039</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update">
+      <option name="closed" value="true" />
+      <created>1731080425534</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1731080425534</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
