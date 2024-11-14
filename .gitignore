@@ -7,8 +7,9 @@
 *.iml
 *.ipr
 
-### VS Code ###
-.vscode/
+target/classes
+target/generated-sources
+target/maven-archiver
+target/maven-status
+target/original-server.jar
 
-### Mac OS ###
-.DS_Store
