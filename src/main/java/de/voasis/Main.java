@@ -9,76 +9,81 @@ import net.minestom.server.event.player.PlayerBlockInteractEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.anvil.AnvilLoader;
+
 import java.io.*;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.*;
+import java.util.Collections;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Starting world initialization...");
+
         File worldDir = new File("world");
         System.out.println("World directory path: " + worldDir.getAbsolutePath());
-        if (!worldDir.exists()) {
-            System.out.println("Creating world directory...");
-            worldDir.mkdirs();
-        }
+        worldDir.mkdirs();
+
         File regionDir = new File(worldDir, "region");
         System.out.println("Region directory path: " + regionDir.getAbsolutePath());
-        if (!regionDir.exists()) {
-            System.out.println("Creating region directory...");
-            regionDir.mkdirs();
-        }
+        regionDir.mkdirs();
+
         try {
-            System.out.println("Available resources in JAR:");
-            URL resourcesUrl = Main.class.getResource("/world.region");
-            System.out.println("Resource URL: " + resourcesUrl);
+            // Get the resource path
+            URI uri = Main.class.getResource("/world.region").toURI();
+            System.out.println("Resource URI: " + uri);
 
-            ClassLoader classLoader = Main.class.getClassLoader();
-            try (InputStream is = classLoader.getResourceAsStream("world.region")) {
-                if (is == null) {
-                    System.out.println("Could not find world.region directory in resources");
-                } else {
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        System.out.println("Found resource: " + line);
-                    }
-                }
+            Path resourcePath;
+            if (uri.getScheme().equals("jar")) {
+                FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
+                resourcePath = fileSystem.getPath("/world.region");
+            } else {
+                resourcePath = Paths.get(uri);
             }
 
-            String[] mcaFiles = {
-                    "r.0.0.mca", "r.0.-1.mca", "r.-1.0.mca", "r.-1.-1.mca",
-                    "r.1.0.mca", "r.1.-1.mca", "r.0.1.mca", "r.-1.1.mca"
-            };
-
-            for (String mcaFile : mcaFiles) {
-                try (InputStream mcaStream = classLoader.getResourceAsStream("world.region/" + mcaFile)) {
-                    if (mcaStream != null) {
-                        System.out.println("Found MCA file: " + mcaFile);
-                        File targetFile = new File(regionDir, mcaFile);
-                        Files.copy(mcaStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                        System.out.println("Copied " + mcaFile + " to " + targetFile.getAbsolutePath());
-                    }
-                } catch (Exception e) {
-                    System.err.println("Error copying " + mcaFile + ": " + e.getMessage());
-                }
+            // Walk through all files in the resources directory
+            try (Stream<Path> walk = Files.walk(resourcePath, 1)) {
+                walk.filter(Files::isRegularFile)
+                        .forEach(path -> {
+                            try {
+                                String fileName = path.getFileName().toString();
+                                if (fileName.endsWith(".mca")) {
+                                    System.out.println("Copying: " + fileName);
+                                    try (InputStream is = Main.class.getResourceAsStream("/world.region/" + fileName)) {
+                                        if (is != null) {
+                                            Files.copy(is, new File(regionDir, fileName).toPath(),
+                                                    StandardCopyOption.REPLACE_EXISTING);
+                                            System.out.println("Successfully copied: " + fileName);
+                                        }
+                                    }
+                                }
+                            } catch (IOException e) {
+                                System.err.println("Error copying file: " + e.getMessage());
+                            }
+                        });
             }
-        } catch (Exception e) {
-            System.err.println("Error during resource copying:");
+        } catch (URISyntaxException | IOException e) {
+            System.err.println("Error accessing resources: ");
             e.printStackTrace();
         }
+
         var server = MinecraftServer.init();
         var instance = MinecraftServer.getInstanceManager().createInstanceContainer();
         instance.setChunkLoader(new AnvilLoader(worldDir.getPath()));
+
         var vsecret = System.getenv("PAPER_VELOCITY_SECRET");
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
+
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0, 41, 517.5, 90, 0));
         });
+
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockInteractEvent.class, event -> event.setCancelled(true));
+
         instance.setChunkSupplier(LightingChunk::new);
         server.start("0.0.0.0", 25565);
     }
