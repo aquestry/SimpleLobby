@@ -9,39 +9,63 @@ import net.minestom.server.event.player.PlayerBlockInteractEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.anvil.AnvilLoader;
-
 import java.io.*;
 import java.net.URL;
 import java.nio.file.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Starting world initialization...");
         File worldDir = new File("world");
+        System.out.println("World directory path: " + worldDir.getAbsolutePath());
         if (!worldDir.exists()) {
+            System.out.println("Creating world directory...");
             worldDir.mkdirs();
-            try {
-                URL regionUrl = Main.class.getResource("/world.region");
-                if (regionUrl != null) {
-                    File regionDir = new File(worldDir, "region");
-                    regionDir.mkdirs();
-                    try (InputStream in = Main.class.getResourceAsStream("/world.region");
-                         BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
-                        String resource;
-                        while ((resource = reader.readLine()) != null) {
-                            if (resource.endsWith(".mca")) {
-                                try (InputStream fileStream = Main.class.getResourceAsStream("/world.region/" + resource)) {
-                                    if (fileStream != null) {
-                                        Files.copy(fileStream, new File(regionDir, resource).toPath(), StandardCopyOption.REPLACE_EXISTING);
-                                    }
-                                }
-                            }
-                        }
+        }
+        File regionDir = new File(worldDir, "region");
+        System.out.println("Region directory path: " + regionDir.getAbsolutePath());
+        if (!regionDir.exists()) {
+            System.out.println("Creating region directory...");
+            regionDir.mkdirs();
+        }
+        try {
+            System.out.println("Available resources in JAR:");
+            URL resourcesUrl = Main.class.getResource("/world.region");
+            System.out.println("Resource URL: " + resourcesUrl);
+
+            ClassLoader classLoader = Main.class.getClassLoader();
+            try (InputStream is = classLoader.getResourceAsStream("world.region")) {
+                if (is == null) {
+                    System.out.println("Could not find world.region directory in resources");
+                } else {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println("Found resource: " + line);
                     }
                 }
-            } catch (Exception e) {
-                System.err.println("Failed to copy region folder: " + e.getMessage());
-                e.printStackTrace();
             }
+
+            String[] mcaFiles = {
+                    "r.0.0.mca", "r.0.-1.mca", "r.-1.0.mca", "r.-1.-1.mca",
+                    "r.1.0.mca", "r.1.-1.mca", "r.0.1.mca", "r.-1.1.mca"
+            };
+
+            for (String mcaFile : mcaFiles) {
+                try (InputStream mcaStream = classLoader.getResourceAsStream("world.region/" + mcaFile)) {
+                    if (mcaStream != null) {
+                        System.out.println("Found MCA file: " + mcaFile);
+                        File targetFile = new File(regionDir, mcaFile);
+                        Files.copy(mcaStream, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                        System.out.println("Copied " + mcaFile + " to " + targetFile.getAbsolutePath());
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error copying " + mcaFile + ": " + e.getMessage());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error during resource copying:");
+            e.printStackTrace();
         }
         var server = MinecraftServer.init();
         var instance = MinecraftServer.getInstanceManager().createInstanceContainer();
