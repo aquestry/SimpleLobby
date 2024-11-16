@@ -11,11 +11,8 @@ import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.anvil.AnvilLoader;
 
 import java.io.*;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.*;
-import java.util.Collections;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,43 +26,42 @@ public class Main {
         System.out.println("Region directory path: " + regionDir.getAbsolutePath());
         regionDir.mkdirs();
 
-        try {
-            // Get the resource path
-            URI uri = Main.class.getResource("/world.region").toURI();
-            System.out.println("Resource URI: " + uri);
-
-            Path resourcePath;
-            if (uri.getScheme().equals("jar")) {
-                FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
-                resourcePath = fileSystem.getPath("/world.region");
-            } else {
-                resourcePath = Paths.get(uri);
+        // Liste aller möglichen MCA-Dateien
+        List<String> mcaFiles = new ArrayList<>();
+        for (int x = -2; x <= 2; x++) {
+            for (int z = -2; z <= 2; z++) {
+                mcaFiles.add(String.format("r.%d.%d.mca", x, z));
             }
+        }
 
-            // Walk through all files in the resources directory
-            try (Stream<Path> walk = Files.walk(resourcePath, 1)) {
-                walk.filter(Files::isRegularFile)
-                        .forEach(path -> {
-                            try {
-                                String fileName = path.getFileName().toString();
-                                if (fileName.endsWith(".mca")) {
-                                    System.out.println("Copying: " + fileName);
-                                    try (InputStream is = Main.class.getResourceAsStream("/world.region/" + fileName)) {
-                                        if (is != null) {
-                                            Files.copy(is, new File(regionDir, fileName).toPath(),
-                                                    StandardCopyOption.REPLACE_EXISTING);
-                                            System.out.println("Successfully copied: " + fileName);
-                                        }
-                                    }
-                                }
-                            } catch (IOException e) {
-                                System.err.println("Error copying file: " + e.getMessage());
-                            }
-                        });
+        // Versuche jede mögliche MCA-Datei zu kopieren
+        ClassLoader classLoader = Main.class.getClassLoader();
+        for (String mcaFile : mcaFiles) {
+            try (InputStream is = classLoader.getResourceAsStream("world.region/" + mcaFile)) {
+                if (is != null) {
+                    System.out.println("Found and copying: " + mcaFile);
+                    File outFile = new File(regionDir, mcaFile);
+                    try (FileOutputStream fos = new FileOutputStream(outFile)) {
+                        byte[] buffer = new byte[8192];
+                        int bytesRead;
+                        while ((bytesRead = is.read(buffer)) != -1) {
+                            fos.write(buffer, 0, bytesRead);
+                        }
+                    }
+                    System.out.println("Successfully copied: " + mcaFile);
+                }
+            } catch (IOException e) {
+                System.out.println("Could not copy " + mcaFile + ": " + e.getMessage());
             }
-        } catch (URISyntaxException | IOException e) {
-            System.err.println("Error accessing resources: ");
-            e.printStackTrace();
+        }
+
+        // Liste die tatsächlich kopierten Dateien auf
+        System.out.println("Content of region directory:");
+        File[] files = regionDir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                System.out.println("- " + file.getName() + " (" + file.length() + " bytes)");
+            }
         }
 
         var server = MinecraftServer.init();
