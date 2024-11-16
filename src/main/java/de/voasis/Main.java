@@ -8,18 +8,17 @@ import net.minestom.server.event.player.PlayerBlockPlaceEvent;
 import net.minestom.server.event.player.PlayerBlockInteractEvent;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.LightingChunk;
-import net.minestom.server.instance.block.Block;
-
+import net.minestom.server.instance.anvil.AnvilLoader;
 public class Main {
     public static void main(String[] args) {
         var server = MinecraftServer.init();
         var instance = MinecraftServer.getInstanceManager().createInstanceContainer();
-        instance.setGenerator(unit -> unit.modifier().fillHeight(0, 1, Block.GRASS_BLOCK));
+        instance.setChunkLoader(new AnvilLoader("world"));
         var vsecret = System.getenv("PAPER_VELOCITY_SECRET");
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
-            event.getPlayer().setRespawnPoint(new Pos(0, 41, 517.5, 90,0));
+            event.getPlayer().setRespawnPoint(new Pos(0, 100, 0, 0,0));
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
