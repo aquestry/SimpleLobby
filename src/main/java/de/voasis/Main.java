@@ -19,7 +19,7 @@ public class Main {
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
-            event.getPlayer().setRespawnPoint(new Pos(0, 41, 517.5, 90,0));
+            event.getPlayer().setRespawnPoint(new Pos(0, 40, 0));
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
