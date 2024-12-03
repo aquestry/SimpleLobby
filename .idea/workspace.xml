@@ -6,11 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/SimpleNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/SimpleNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +69,23 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\anton\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="86c21ea9-72c2-47c4-a0c6-25dd93c4b921" />
+        <option name="reportName" value="SimpleLobby/qodana/2024-12-03" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\anton\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="86c21ea9-72c2-47c4-a0c6-25dd93c4b921" reportId="SimpleLobby/qodana/2024-12-03" />
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anton\IdeaProjects\SimpleLobby\src\main\resources" />
@@ -71,7 +98,7 @@
       <command value="mvn dependency:tree -Ddetail=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -230,14 +257,7 @@
       <workItem from="1731845050711" duration="5000" />
       <workItem from="1731845201195" duration="2000" />
       <workItem from="1731856117544" duration="92000" />
-    </task>
-    <task id="LOCAL-00005" summary="Add">
-      <option name="closed" value="true" />
-      <created>1728146718634</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1728146718634</updated>
+      <workItem from="1733241603998" duration="1907000" />
     </task>
     <task id="LOCAL-00006" summary="Update">
       <option name="closed" value="true" />
@@ -623,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731844317557</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Update">
+      <option name="closed" value="true" />
+      <created>1733242546712</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1733242546713</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
