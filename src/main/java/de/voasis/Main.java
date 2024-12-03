@@ -1,5 +1,6 @@
 package de.voasis;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
@@ -21,6 +22,7 @@ public class Main {
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
         });
+        new SimpleNPC(instance, new Pos(0, 41, 0), Component.text("NPC"));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockInteractEvent.class, event -> event.setCancelled(true));
