@@ -20,16 +20,15 @@ public class Main {
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         instance.setChunkSupplier(LightingChunk::new);
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
-            Player player = event.getPlayer();
             event.setSpawningInstance(instance);
-            player.setRespawnPoint(new Pos(0.5, 2, 0.5));
+            event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
             new PlaybackPlayer("Parkour", "", "", instance, npcSpawn);
 
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerEntityInteractEvent.class, event -> {
             Player player = event.getPlayer();
             if(event.getTarget().getPosition().equals(npcSpawn)) {
-                String message = "queue:" + player.getUsername() + "Parkour";
+                String message = "queue:" + player.getUsername() + ":Parkour";
                 PluginMessagePacket packet = new PluginMessagePacket(
                         "nebula:main",
                         message.getBytes(StandardCharsets.UTF_8)
