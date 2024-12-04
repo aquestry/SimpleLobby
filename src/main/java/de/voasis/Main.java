@@ -22,7 +22,7 @@ public class Main {
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
-            new PlaybackPlayer("Parkour - Left Click", "", "", instance, npcSpawn);
+            new PlaybackPlayer("Parkour", "", "", instance, npcSpawn);
 
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerEntityInteractEvent.class, event -> {
