@@ -78,7 +78,7 @@
       <command value="mvn dependency:tree -Ddetail=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -211,14 +211,7 @@
       <workItem from="1733342637730" duration="1926000" />
       <workItem from="1733344885441" duration="107000" />
       <workItem from="1733501857729" duration="1989000" />
-    </task>
-    <task id="LOCAL-00014" summary="Update">
-      <option name="closed" value="true" />
-      <created>1728152263410</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1728152263410</updated>
+      <workItem from="1733512366511" duration="80000" />
     </task>
     <task id="LOCAL-00015" summary="Update">
       <option name="closed" value="true" />
@@ -604,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733503856639</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Update">
+      <option name="closed" value="true" />
+      <created>1733512419670</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1733512419670</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

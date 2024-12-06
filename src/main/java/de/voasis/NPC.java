@@ -22,7 +22,7 @@ public class NPC extends Entity {
     @Override
     public void updateNewViewer(@NotNull Player player) {
         var properties = new ArrayList<PlayerInfoUpdatePacket.Property>();
-        var entry = new PlayerInfoUpdatePacket.Entry(getUuid(), "Parkour", properties, true, 1, GameMode.CREATIVE, null, null, 1);
+        var entry = new PlayerInfoUpdatePacket.Entry(getUuid(), "Parkour", properties, false, 0, GameMode.CREATIVE, null, null, 1);
         player.sendPacket(new PlayerInfoUpdatePacket(PlayerInfoUpdatePacket.Action.ADD_PLAYER, entry));
         super.updateNewViewer(player);
         player.sendPackets(new EntityMetaDataPacket(getEntityId(), Map.of(17, Metadata.Byte((byte) 127))));
