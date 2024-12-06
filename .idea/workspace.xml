@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/PlaybackPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,40 +141,9 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="SimpleLobby [package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="cmdOptions" />
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="package" />
-              </list>
-            </option>
-            <option name="multimoduleDir" />
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Maven.SimpleLobby [clean,package]" />
-      <item itemvalue="Maven.SimpleLobby [package]" />
     </list>
     <recent_temporary>
       <list>
@@ -240,14 +214,8 @@
       <workItem from="1733241603998" duration="2730000" />
       <workItem from="1733248453821" duration="106000" />
       <workItem from="1733342637730" duration="1926000" />
-    </task>
-    <task id="LOCAL-00011" summary="Update">
-      <option name="closed" value="true" />
-      <created>1728150728962</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1728150728962</updated>
+      <workItem from="1733344885441" duration="107000" />
+      <workItem from="1733501857729" duration="1859000" />
     </task>
     <task id="LOCAL-00012" summary="Update">
       <option name="closed" value="true" />
@@ -633,7 +601,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733344548348</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Fix">
+      <option name="closed" value="true" />
+      <created>1733344947600</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1733344947600</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,8 +645,8 @@
     <MESSAGE value="Removed Lobby + Cleanup" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Testing" />
-    <MESSAGE value="Fix" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
 </project>
