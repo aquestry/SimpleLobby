@@ -19,11 +19,10 @@ public class Main {
         var vsecret = System.getenv("PAPER_VELOCITY_SECRET");
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         instance.setChunkSupplier(LightingChunk::new);
+        new NPC(instance, npcSpawn);
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
-            new NPC(instance, npcSpawn);
-
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerEntityInteractEvent.class, event -> {
             Player player = event.getPlayer();

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/PlaybackPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
-    </list>
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +78,7 @@
       <command value="mvn dependency:tree -Ddetail=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -215,23 +210,7 @@
       <workItem from="1733248453821" duration="106000" />
       <workItem from="1733342637730" duration="1926000" />
       <workItem from="1733344885441" duration="107000" />
-      <workItem from="1733501857729" duration="1859000" />
-    </task>
-    <task id="LOCAL-00012" summary="Update">
-      <option name="closed" value="true" />
-      <created>1728151327141</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1728151327141</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Update">
-      <option name="closed" value="true" />
-      <created>1728151842239</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1728151842239</updated>
+      <workItem from="1733501857729" duration="1989000" />
     </task>
     <task id="LOCAL-00014" summary="Update">
       <option name="closed" value="true" />
@@ -609,7 +588,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733344947600</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Update">
+      <option name="closed" value="true" />
+      <created>1733503785751</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1733503785751</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Update">
+      <option name="closed" value="true" />
+      <created>1733503856638</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1733503856639</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,8 +640,8 @@
     <MESSAGE value="Removed Lobby + Cleanup" />
     <MESSAGE value="Cleanup" />
     <MESSAGE value="Testing" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
