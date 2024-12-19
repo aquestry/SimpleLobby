@@ -3,6 +3,7 @@ package de.voasis;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.Player;
+import net.minestom.server.event.entity.EntityAttackEvent;
 import net.minestom.server.event.player.*;
 import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.LightingChunk;
@@ -24,15 +25,16 @@ public class Main {
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
         });
-        MinecraftServer.getGlobalEventHandler().addListener(PlayerEntityInteractEvent.class, event -> {
-            Player player = event.getPlayer();
-            if(event.getTarget().getPosition().equals(npcSpawn)) {
-                String message = "queue:" + player.getUsername() + ":Parkour";
-                PluginMessagePacket packet = new PluginMessagePacket(
-                        "nebula:main",
-                        message.getBytes(StandardCharsets.UTF_8)
-                );
-                player.sendPacket(packet);
+        MinecraftServer.getGlobalEventHandler().addListener(EntityAttackEvent.class, event -> {
+            if(event.getEntity() instanceof Player player) {
+                if(event.getTarget().getPosition().equals(npcSpawn)) {
+                    String message = "queue:" + player.getUsername() + ":Parkour";
+                    PluginMessagePacket packet = new PluginMessagePacket(
+                            "nebula:main",
+                            message.getBytes(StandardCharsets.UTF_8)
+                    );
+                    player.sendPacket(packet);
+                }
             }
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
