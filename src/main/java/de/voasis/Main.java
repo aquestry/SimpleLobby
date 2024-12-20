@@ -38,9 +38,6 @@ public class Main {
             }
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
-            if(!event.getIdentifier().equals("nebula:main")) {
-                return;
-            }
             Player player = event.getPlayer();
             String message = new String(event.getMessage(), StandardCharsets.UTF_8);
             System.out.println(message);
