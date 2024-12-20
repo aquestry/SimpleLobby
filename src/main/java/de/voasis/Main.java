@@ -37,6 +37,11 @@ public class Main {
                 }
             }
         });
+        MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
+            Player player = event.getPlayer();
+            String message = new String(event.getMessage(), StandardCharsets.UTF_8);
+            System.out.println(message);
+        });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockInteractEvent.class, event -> event.setCancelled(true));

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update 1.21.4" />
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update 1.21.4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,15 +220,10 @@
       <workItem from="1733512366511" duration="80000" />
       <workItem from="1733521707799" duration="45000" />
       <workItem from="1734612831691" duration="1098000" />
-      <workItem from="1734722441232" duration="300000" />
-    </task>
-    <task id="LOCAL-00018" summary="Update">
-      <option name="closed" value="true" />
-      <created>1728557631853</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1728557631853</updated>
+      <workItem from="1734722441232" duration="413000" />
+      <workItem from="1734724132429" duration="177000" />
+      <workItem from="1734724312484" duration="31000" />
+      <workItem from="1734724356919" duration="313000" />
     </task>
     <task id="LOCAL-00019" summary="Update">
       <option name="closed" value="true" />
@@ -608,7 +609,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734722581460</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Update 1.21.4">
+      <option name="closed" value="true" />
+      <created>1734722833285</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1734722833285</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
