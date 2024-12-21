@@ -10,7 +10,6 @@ import net.minestom.server.event.player.PlayerDisconnectEvent;
 import net.minestom.server.event.player.PlayerPluginMessageEvent;
 
 public class NameTagHandler {
-    private static final MiniMessage mm = MiniMessage.miniMessage();
     public NameTagHandler() {
         MinecraftServer.getGlobalEventHandler().addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
@@ -23,7 +22,7 @@ public class NameTagHandler {
             String playerName = message.split(":")[0];
             Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
             if(player != null && player.getPassengers().isEmpty()) {
-                player.setDisplayName(mm.deserialize(message.split(":")[1].split("#")[2] + player.getUsername()));
+                player.setDisplayName(MiniMessage.miniMessage().deserialize(message.split(":")[1].split("#")[2] + player.getUsername()));
                 InteractionMeta displayMeta = (InteractionMeta) display.getEntityMeta();
                 displayMeta.setInvisible(true);
                 displayMeta.setCustomName(player.getDisplayName());

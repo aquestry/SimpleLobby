@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class NPC extends Entity {
-    public NPC(Instance instance, Pos spawn) {
+    public NPC(Instance instance) {
         super(EntityType.PLAYER);
         setBoundingBox(0, 0, 0);
         setNoGravity(true);
         setInstance(instance);
-        scheduleNextTick(entity -> teleport(spawn));
+        scheduleNextTick(entity -> teleport(new Pos(0.5, 1, 8.5, 180, 0)));
     }
     @Override
     public void updateNewViewer(@NotNull Player player) {
