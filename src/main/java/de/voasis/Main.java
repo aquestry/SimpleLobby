@@ -38,8 +38,12 @@ public class Main {
             }
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
+            String identifier = event.getIdentifier();
             String message = event.getMessageString();
-            System.out.println("Channel: " + event.getIdentifier() + " Message-String:");
+            if(!identifier.equals("nebula:main")) {
+                return;
+            }
+            System.out.println("Channel: " + identifier + " Message-String:");
             System.out.println(message);
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
