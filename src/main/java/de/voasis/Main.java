@@ -3,7 +3,10 @@ package de.voasis;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
+import net.minestom.server.entity.Entity;
+import net.minestom.server.entity.EntityType;
 import net.minestom.server.entity.Player;
+import net.minestom.server.entity.metadata.other.InteractionMeta;
 import net.minestom.server.event.entity.EntityAttackEvent;
 import net.minestom.server.event.player.*;
 import net.minestom.server.extras.velocity.VelocityProxy;
@@ -11,11 +14,8 @@ import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.network.packet.server.common.PluginMessagePacket;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
-    private static List<NametagEntity> toUpdate = new ArrayList<>();
     private static final MiniMessage mm = MiniMessage.miniMessage();
     public static void main(String[] args) {
         Pos npcSpawn = new Pos(0.5, 1, 8.5, 180, 0);
@@ -30,10 +30,8 @@ public class Main {
             Player player = event.getPlayer();
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
-            for(NametagEntity nametag : toUpdate) {
-                nametag.updateNewViewer(player);
-            }
         });
+        MinecraftServer.getGlobalEventHandler().addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
         MinecraftServer.getGlobalEventHandler().addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {
                 if(event.getTarget().getPosition().equals(npcSpawn)) {
@@ -53,14 +51,15 @@ public class Main {
             if(!identifier.equals("nebula:main")) {
                 return;
             }
-            System.out.println("Channel: " + identifier + " Message-String:");
+            System.out.println("Channel: " + identifier + " Message:");
             System.out.println(message);
+            Entity display = new Entity(EntityType.INTERACTION);
             player.setDisplayName(mm.deserialize(message.split(":")[1].split("#")[2] + player.getUsername()));
-            NametagEntity tag = new NametagEntity(player);
-            toUpdate.add(tag);
-            for(Player p : instance.getPlayers()) {
-                tag.updateNewViewer(p);
-            }
+            InteractionMeta displayMeta = (InteractionMeta) display.getEntityMeta();
+            displayMeta.setInvisible(true);
+            displayMeta.setCustomName(player.getDisplayName());
+            displayMeta.setCustomNameVisible(true);
+            player.addPassenger(display);
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
