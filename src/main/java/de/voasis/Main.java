@@ -38,7 +38,7 @@ public class Main {
             }
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
-            String message = new String(event.getMessage(), StandardCharsets.UTF_8);
+            String message = event.getMessageString();
             System.out.println("Message:");
             System.out.println(message);
         });
