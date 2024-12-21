@@ -39,7 +39,9 @@ public class Main {
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
             String message = event.getMessageString();
-            System.out.println("Message:");
+            System.out.println("Channel: " + event.getIdentifier() + " Message-String:");
+            System.out.println(message);
+            System.out.println("Message-String:");
             System.out.println(message);
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
