@@ -14,7 +14,6 @@ public class NametagEntity extends Entity {
         super(EntityType.INTERACTION);
         InteractionMeta meta = (InteractionMeta) this.getEntityMeta();
         meta.setCustomNameVisible(true);
-        Entity test = new Entity(EntityType.TEXT_DISPLAY);
         if (player.getDisplayName() != null) {
             meta.setCustomName(player.getDisplayName());
         } else {
