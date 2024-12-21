@@ -47,19 +47,22 @@ public class Main {
         MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
-            Player player = event.getPlayer();
             if(!identifier.equals("nebula:main")) {
                 return;
             }
             System.out.println("Channel: " + identifier + " Message:");
             System.out.println(message);
             Entity display = new Entity(EntityType.INTERACTION);
-            player.setDisplayName(mm.deserialize(message.split(":")[1].split("#")[2] + player.getUsername()));
-            InteractionMeta displayMeta = (InteractionMeta) display.getEntityMeta();
-            displayMeta.setInvisible(true);
-            displayMeta.setCustomName(player.getDisplayName());
-            displayMeta.setCustomNameVisible(true);
-            player.addPassenger(display);
+            String playerName = message.split(":")[0];
+            Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
+            if(player != null && player.getPassengers().isEmpty()) {
+                player.setDisplayName(mm.deserialize(message.split(":")[1].split("#")[2] + player.getUsername()));
+                InteractionMeta displayMeta = (InteractionMeta) display.getEntityMeta();
+                displayMeta.setInvisible(true);
+                displayMeta.setCustomName(player.getDisplayName());
+                displayMeta.setCustomNameVisible(true);
+                player.addPassenger(display);
+            }
         });
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
