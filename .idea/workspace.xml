@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NameTagHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NameTagHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <command value="mvn dependency:tree -Ddetail=true" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -236,31 +236,8 @@
       <workItem from="1735044569616" duration="1221000" />
       <workItem from="1735049850292" duration="1377000" />
       <workItem from="1735051442284" duration="32000" />
-      <workItem from="1735052609483" duration="813000" />
-    </task>
-    <task id="LOCAL-00037" summary="Cleanup">
-      <option name="closed" value="true" />
-      <created>1731588435313</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1731588435313</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Cleanup">
-      <option name="closed" value="true" />
-      <created>1731588528687</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1731588528687</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Cleanup">
-      <option name="closed" value="true" />
-      <created>1731760297789</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1731760297789</updated>
+      <workItem from="1735052609483" duration="2120000" />
+      <workItem from="1735068590861" duration="8000" />
     </task>
     <task id="LOCAL-00040" summary="Cleanup">
       <option name="closed" value="true" />
@@ -630,7 +607,31 @@
       <option name="project" value="LOCAL" />
       <updated>1735052709208</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735055543153</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1735055543153</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735055859836</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1735055859836</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735056159616</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1735056159616</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

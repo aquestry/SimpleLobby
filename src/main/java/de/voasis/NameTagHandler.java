@@ -14,8 +14,8 @@ import net.minestom.server.event.player.PlayerPluginMessageEvent;
 
 public class NameTagHandler {
     public NameTagHandler() {
-        MinecraftServer.getGlobalEventHandler().addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
-        MinecraftServer.getGlobalEventHandler().addListener(PlayerPluginMessageEvent.class, event -> {
+        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
+        Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
             if(!identifier.equals("nebula:main")) { return; }
