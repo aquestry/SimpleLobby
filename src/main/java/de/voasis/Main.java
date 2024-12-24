@@ -19,7 +19,8 @@ public class Main {
         var vsecret = System.getenv("PAPER_VELOCITY_SECRET");
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         instance.setChunkSupplier(LightingChunk::new);
-        NPC parkourNPC = new NPC(instance);
+        NPC parkourNPC = new NPC("Parkour", instance, new Pos(0.5, 1, 8.5, 180, 0));
+        NPC duelsNPC = new NPC("Duels", instance, new Pos(-0.5, 1, 8.5, 180, 0));
         new NameTagHandler();
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             Player player = event.getPlayer();
@@ -30,6 +31,14 @@ public class Main {
             if(event.getEntity() instanceof Player player) {
                 if(event.getTarget().equals(parkourNPC)) {
                     String message = "queue:" + player.getUsername() + ":Parkour";
+                    PluginMessagePacket packet = new PluginMessagePacket(
+                            "nebula:main",
+                            message.getBytes(StandardCharsets.UTF_8)
+                    );
+                    player.sendPacket(packet);
+                }
+                if(event.getTarget().equals(duelsNPC)) {
+                    String message = "queue:" + player.getUsername() + ":Duels";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
                             message.getBytes(StandardCharsets.UTF_8)
