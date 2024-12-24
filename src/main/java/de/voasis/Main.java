@@ -53,6 +53,7 @@ public class Main {
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockBreakEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockPlaceEvent.class, event -> event.setCancelled(true));
         MinecraftServer.getGlobalEventHandler().addListener(PlayerBlockInteractEvent.class, event -> event.setCancelled(true));
+        MinecraftServer.getGlobalEventHandler().addListener(PlayerChatEvent.class, event -> event.setCancelled(true));
         server.start("0.0.0.0", 25565);
     }
 }

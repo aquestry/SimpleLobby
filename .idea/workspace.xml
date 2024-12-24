@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NameTagHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/NameTagHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/voasis/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.jar" afterDir="false" />
-    </list>
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,14 +233,7 @@
       <workItem from="1734964629928" duration="182000" />
       <workItem from="1735044569616" duration="1221000" />
       <workItem from="1735049850292" duration="1377000" />
-    </task>
-    <task id="LOCAL-00035" summary="Removed Lobby + Cleanup">
-      <option name="closed" value="true" />
-      <created>1731588024853</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1731588024853</updated>
+      <workItem from="1735051442284" duration="32000" />
     </task>
     <task id="LOCAL-00036" summary="Cleanup">
       <option name="closed" value="true" />
@@ -635,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735049718739</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735051451122</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1735051451122</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
