@@ -11,6 +11,7 @@ import net.minestom.server.entity.metadata.display.AbstractDisplayMeta;
 import net.minestom.server.entity.metadata.display.TextDisplayMeta;
 import net.minestom.server.event.player.PlayerDisconnectEvent;
 import net.minestom.server.event.player.PlayerPluginMessageEvent;
+import net.minestom.server.timer.TaskSchedule;
 
 public class NameTagHandler {
     public NameTagHandler() {
@@ -22,12 +23,16 @@ public class NameTagHandler {
             System.out.println("Channel: " + identifier + " Message:");
             System.out.println(message);
             String playerName = message.split(":")[0];
-            Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
-            if(player != null && player.getPassengers().isEmpty()) {
-                String newName = message.split(":")[1].split("#")[2];
-                System.out.println("Player: " + playerName + " New Name: " + newName);
-                newNametag(player, newName + player.getUsername());
-            }
+            MinecraftServer.getSchedulerManager().scheduleTask(() -> {
+                        Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
+                        if(player != null && player.getPassengers().isEmpty()) {
+                            String newName = message.split(":")[1].split("#")[2];
+                            System.out.println("Player: " + playerName + " New Name: " + newName);
+                            newNametag(player, newName + player.getUsername());
+                        }
+                    },
+                    TaskSchedule.seconds(3),
+                    TaskSchedule.stop());
         });
     }
     public void newNametag(Object entityHolder, String name) {
