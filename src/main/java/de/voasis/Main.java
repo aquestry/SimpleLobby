@@ -12,6 +12,7 @@ import net.minestom.server.network.packet.server.common.PluginMessagePacket;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
+    public static NameTagHandler nameTagHandler;
     public static void main(String[] args) {
         var server = MinecraftServer.init();
         var instance = MinecraftServer.getInstanceManager().createInstanceContainer();
@@ -19,9 +20,9 @@ public class Main {
         var vsecret = System.getenv("PAPER_VELOCITY_SECRET");
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         instance.setChunkSupplier(LightingChunk::new);
-        NPC parkourNPC = new NPC("Parkour", instance, new Pos(0.5, 1, 8.5, 180, 0));
-        NPC duelsNPC = new NPC("Duels", instance, new Pos(-0.5, 1, 8.5, 180, 0));
-        new NameTagHandler();
+        nameTagHandler = new NameTagHandler();
+        NPC parkourNPC = new NPC("Parkour", instance, new Pos(1.5, 1, 8.5, 180, 0), "BastiGHG");
+        NPC duelsNPC = new NPC("Duels", instance, new Pos(-1.5, 1, 8.5, 180, 0), "Wichtiger");
         MinecraftServer.getGlobalEventHandler().addListener(AsyncPlayerConfigurationEvent.class, event -> {
             Player player = event.getPlayer();
             event.setSpawningInstance(instance);
@@ -30,6 +31,7 @@ public class Main {
         MinecraftServer.getGlobalEventHandler().addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {
                 if(event.getTarget().equals(parkourNPC)) {
+                    System.out.println("Parkour got clicked!");
                     String message = "queue:" + player.getUsername() + ":Parkour";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
@@ -38,6 +40,7 @@ public class Main {
                     player.sendPacket(packet);
                 }
                 if(event.getTarget().equals(duelsNPC)) {
+                    System.out.println("Duels got clicked!");
                     String message = "queue:" + player.getUsername() + ":Duels";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
