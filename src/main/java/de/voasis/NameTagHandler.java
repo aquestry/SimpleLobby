@@ -24,7 +24,9 @@ public class NameTagHandler {
             String playerName = message.split(":")[0];
             Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
             if(player != null && player.getPassengers().isEmpty()) {
-                newNametag(player, message.split(":")[1].split("#")[2] + player.getUsername());
+                String newName = message.split(":")[1].split("#")[2];
+                System.out.println("Player: " + playerName + " New Name: " + newName);
+                newNametag(player, newName + player.getUsername());
             }
         });
     }
