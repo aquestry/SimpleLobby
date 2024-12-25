@@ -42,7 +42,7 @@ public class NebulaAPI {
                         for (int i = 0; i < lines.length; i++) {
                             System.out.println("Line: " + lines[i]);
                             sidebar.createLine(new Sidebar.ScoreboardLine(
-                                    "",
+                                    lines[i],
                                     MiniMessage.miniMessage().deserialize(lines[i]),
                                     i,
                                     Sidebar.NumberFormat.blank()
