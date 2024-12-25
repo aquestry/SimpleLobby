@@ -31,7 +31,7 @@ public class Main {
         NPC duelsNPC = new NPC("Duels", instance, new Pos(-1.5, 1, 8.5, 180, 0), "Wichtiger");
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
-            event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
+            event.getPlayer().setRespawnPoint(new Pos(0, 2, 0));
         });
         globalEventHandler.addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {

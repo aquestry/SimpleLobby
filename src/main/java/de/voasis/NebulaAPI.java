@@ -23,8 +23,8 @@ public class NebulaAPI {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
             Player player = event.getPlayer();
-            System.out.println("Channel: " + identifier + " Message: " + message);
             if (!identifier.equals("nebula:main") && !identifier.equals("nebula:scoreboard")) { return; }
+            System.out.println("Channel: " + identifier + " Message: " + message);
             final int[] attempts = {0};
             final Task[] taskHolder = new Task[1];
             taskHolder[0] = MinecraftServer.getSchedulerManager().buildTask(() -> {
