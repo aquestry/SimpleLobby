@@ -21,10 +21,10 @@ public class NebulaAPI {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
             System.out.println("Channel: " + identifier + " Message: " + message);
-            Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(message.split(":")[0]);
+            Player player = event.getPlayer();
             int attempts = 0;
             while (attempts < 10) {
-                if (player != null || player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY)) {
+                if (player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY)) {
                     switch (identifier) {
                         case "nebula:main" -> handleNametagEvent(message);
                         case "nebula:scoreboard" -> handleScoreboardEvent(message);
