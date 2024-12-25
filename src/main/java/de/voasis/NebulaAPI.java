@@ -31,13 +31,14 @@ public class NebulaAPI {
                         case "nebula:main" -> handleNametagEvent(message);
                         case "nebula:scoreboard" -> handleScoreboardEvent(message);
                     }
+                    TaskSchedule.stop();
                 } else {
                     attempts[0]++;
                     if (attempts[0] >= 10) {
                         System.err.println("Failed to process plugin message after 10 attempts: " + identifier);
                     }
                 }
-            }).repeat(TaskSchedule.seconds(1)).delay(TaskSchedule.seconds(0)).schedule();
+            }).repeat(TaskSchedule.seconds(1)).delay(TaskSchedule.seconds(1)).schedule();
         });
     }
 
