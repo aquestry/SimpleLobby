@@ -1,5 +1,7 @@
 package de.voasis;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Vec;
 import net.minestom.server.entity.Entity;
@@ -10,60 +12,54 @@ import net.minestom.server.entity.metadata.display.TextDisplayMeta;
 import net.minestom.server.event.player.PlayerDisconnectEvent;
 import net.minestom.server.event.player.PlayerPluginMessageEvent;
 import net.minestom.server.scoreboard.Sidebar;
-import net.minestom.server.timer.TaskSchedule;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 
 public class NebulaAPI {
     public NebulaAPI() {
-        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
+        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event ->
+                event.getPlayer().getPassengers().forEach(Entity::remove));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
             System.out.println("Channel: " + identifier + " Message: " + message);
-            if (identifier.equals("nebula:main")) {
-                handleNebulaMainMessage(message);
-            }
-            if (identifier.equals("nebula:scoreboard")) {
-                handleNebulaScoreboardMessage(message);
+            switch (identifier) {
+                case "nebula:main" -> handleNametagEvent(message);
+                case "nebula:scoreboard" -> handleScoreboardEvent(message);
+                default -> System.out.println("Unknown identifier: " + identifier);
             }
         });
     }
 
-    private void handleNebulaMainMessage(String message) {
-        String playerName = message.split(":")[0];
-        Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
-        if (player != null) {
-            MinecraftServer.getSchedulerManager().buildTask(() -> {
-                if (player.getInstance() != null && player.getPassengers().isEmpty()) {
-                    String newName = message.split(":")[1].split("#")[2] + player.getUsername();
-                    System.out.println("Player: " + playerName + " New Name: " + newName);
-                    createNametag(player, newName);
-                } else {
-                    System.out.println("Retrying... Player instance not ready yet.");
-                }
-            }).repeat(TaskSchedule.tick(5)).delay(TaskSchedule.tick(0)).schedule();
+    private void handleNametagEvent(String message) {
+        try {
+            String[] parts = message.split(":");
+            String playerName = parts[0];
+            String newName = parts[1].split("#")[2] + playerName;
+            Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
+            if (player != null && player.getPassengers().isEmpty()) {
+                System.out.println("Player: " + playerName + " New Name: " + newName);
+                createNametag(player, newName);
+            }
+        } catch (Exception e) {
+            System.err.println("Error handling nametag event: " + e.getMessage());
         }
     }
 
-    private void handleNebulaScoreboardMessage(String message) {
-        String[] parts = message.split("&");
-        if (parts.length >= 3) {
+    private void handleScoreboardEvent(String message) {
+        try {
+            String[] parts = message.split("&");
+            if (parts.length < 3) {
+                System.err.println("Invalid Scoreboard message format: " + message);
+                return;
+            }
             String username = parts[0];
             String title = parts[1];
             String[] lines = parts[2].split("#");
-            System.out.println("Title: " + title);
-            System.out.println("Lines:");
-            for (int i = 0; i < lines.length; i++) {
-                System.out.println("Line " + i + ": " + lines[i]);
-            }
             Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(username);
             if (player != null) {
                 Sidebar sidebar = new Sidebar(MiniMessage.miniMessage().deserialize(title));
                 for (int i = 0; i < lines.length; i++) {
                     String lineId = "line_" + i;
                     String lineText = lines[i];
-                    System.out.println("Adding Line " + i + ": " + lineText);
                     sidebar.createLine(new Sidebar.ScoreboardLine(
                             lineId,
                             MiniMessage.miniMessage().deserialize(lineText),
@@ -76,8 +72,8 @@ public class NebulaAPI {
             } else {
                 System.err.println("Player not found: " + username);
             }
-        } else {
-            System.err.println("Invalid scoreboard message format: " + message);
+        } catch (Exception e) {
+            System.err.println("Error handling scoreboard event: " + e.getMessage());
         }
     }
 
@@ -93,6 +89,8 @@ public class NebulaAPI {
         if (entityHolder instanceof Player player) {
             player.addPassenger(entity);
             player.setDisplayName(displayName);
+        } else if (entityHolder instanceof NPC npc) {
+            npc.addPassenger(entity);
         }
     }
 }
