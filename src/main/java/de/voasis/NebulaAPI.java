@@ -29,27 +29,27 @@ public class NebulaAPI {
                     createNametag(player, newName + player.getUsername());
                 }
             }
-            if (identifier.equals("nebula:scoreboard")) {
-                String[] scoreboardParts = message.split(":");
-                if (scoreboardParts.length >= 3) {
-                    String playerName = scoreboardParts[0];
-                    String title = scoreboardParts[1];
-                    String[] lines = scoreboardParts[2].split("#");
-                    Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
+            if (event.getIdentifier().equals("nebula:scoreboard")) {
+                String[] parts = message.split(":");
+                if (parts.length >= 3) {
+                    String username = parts[0];
+                    String title = parts[1];
+                    String[] lines = parts[2].split("#");
+                    Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(username);
                     if (player != null) {
-                        Sidebar main = new Sidebar(MiniMessage.miniMessage().deserialize(title));
+                        Sidebar sidebar = new Sidebar(MiniMessage.miniMessage().deserialize(title));
                         for (int i = 0; i < lines.length; i++) {
-                            main.createLine(new Sidebar.ScoreboardLine(
+                            sidebar.createLine(new Sidebar.ScoreboardLine(
                                     "",
-                                    Main.mm.deserialize(lines[i]),
+                                    MiniMessage.miniMessage().deserialize(lines[i]),
                                     lines.length - i,
                                     Sidebar.NumberFormat.blank()
                             ));
                         }
-                        main.addViewer(player);
-                        System.out.println("Scoreboard set for player: " + playerName);
+                        sidebar.addViewer(player);
+                        System.out.println("Scoreboard updated for player: " + username);
                     } else {
-                        System.err.println("Player not found: " + playerName);
+                        System.err.println("Player not found: " + username);
                     }
                 } else {
                     System.err.println("Invalid scoreboard message format: " + message);
