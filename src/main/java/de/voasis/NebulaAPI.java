@@ -24,9 +24,9 @@ public class NebulaAPI {
                 String playerName = message.split(":")[0];
                 Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
                 if(player != null && player.getPassengers().isEmpty()) {
-                    String newName = message.split(":")[1].split("#")[2];
+                    String newName = message.split(":")[1].split("#")[2] + player.getUsername();
                     System.out.println("Player: " + playerName + " New Name: " + newName);
-                    createNametag(player, newName + player.getUsername());
+                    createNametag(player, newName);
                 }
             }
             if (event.getIdentifier().equals("nebula:scoreboard")) {
@@ -70,6 +70,7 @@ public class NebulaAPI {
         meta.setTranslation(new Vec(0, 0.3, 0));
         if (entityHolder instanceof Player player) {
             player.addPassenger(entity);
+            player.setDisplayName(displayName);
         } else if (entityHolder instanceof NPC npc) {
             npc.addPassenger(entity);
         }
