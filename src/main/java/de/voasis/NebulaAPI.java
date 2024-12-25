@@ -35,16 +35,16 @@ public class NebulaAPI {
                     String username = parts[0];
                     String title = parts[1];
                     String[] lines = parts[2].split("#");
-                    System.out.println("Part 2: " + parts[2]);
+                    System.out.println("Lines: " + parts[2]);
                     Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(username);
                     if (player != null) {
                         Sidebar sidebar = new Sidebar(MiniMessage.miniMessage().deserialize(title));
                         for (int i = 0; i < lines.length; i++) {
                             System.out.println("Line: " + lines[i]);
                             sidebar.createLine(new Sidebar.ScoreboardLine(
-                                    lines[i],
+                                    "line_" + i,
                                     MiniMessage.miniMessage().deserialize(lines[i]),
-                                    i,
+                                    lines.length - i,
                                     Sidebar.NumberFormat.blank()
                             ));
                         }
