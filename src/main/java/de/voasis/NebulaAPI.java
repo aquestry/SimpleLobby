@@ -42,7 +42,7 @@ public class NebulaAPI {
                             sidebar.createLine(new Sidebar.ScoreboardLine(
                                     "",
                                     MiniMessage.miniMessage().deserialize(lines[i]),
-                                    lines.length - i,
+                                    i,
                                     Sidebar.NumberFormat.blank()
                             ));
                         }
