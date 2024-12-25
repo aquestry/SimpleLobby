@@ -32,7 +32,6 @@ public class Main {
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             Player player = event.getPlayer();
             event.setSpawningInstance(instance);
-            player.setInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
         });
         globalEventHandler.addListener(EntityAttackEvent.class, event -> {
