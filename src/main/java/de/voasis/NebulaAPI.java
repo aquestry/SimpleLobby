@@ -24,7 +24,7 @@ public class NebulaAPI {
             Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(message.split(":")[0]);
             int attempts = 0;
             while (attempts < 10) {
-                if (player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY)) {
+                if (player != null || player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY)) {
                     switch (identifier) {
                         case "nebula:main" -> handleNametagEvent(message);
                         case "nebula:scoreboard" -> handleScoreboardEvent(message);
