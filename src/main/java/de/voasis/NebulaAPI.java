@@ -30,7 +30,7 @@ public class NebulaAPI {
                 }
             }
             if (event.getIdentifier().equals("nebula:scoreboard")) {
-                String[] parts = message.split(":");
+                String[] parts = message.split("&");
                 if (parts.length >= 3) {
                     String username = parts[0];
                     String title = parts[1];
