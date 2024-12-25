@@ -13,6 +13,7 @@ import net.minestom.server.event.player.PlayerDisconnectEvent;
 import net.minestom.server.event.player.PlayerPluginMessageEvent;
 import net.minestom.server.network.ConnectionState;
 import net.minestom.server.scoreboard.Sidebar;
+import net.minestom.server.timer.Task;
 import net.minestom.server.timer.TaskSchedule;
 
 public class NebulaAPI {
@@ -25,16 +26,18 @@ public class NebulaAPI {
             System.out.println("Channel: " + identifier + " Message: " + message);
             if (!identifier.equals("nebula:main") && !identifier.equals("nebula:scoreboard")) { return; }
             final int[] attempts = {0};
-            MinecraftServer.getSchedulerManager().buildTask(() -> {
+            final Task[] taskHolder = new Task[1];
+            taskHolder[0] = MinecraftServer.getSchedulerManager().buildTask(() -> {
                 if (player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY) && player.getInstance() != null) {
                     switch (identifier) {
                         case "nebula:main" -> handleNametagEvent(message);
                         case "nebula:scoreboard" -> handleScoreboardEvent(message);
                     }
-                    TaskSchedule.stop();
+                    taskHolder[0].cancel();
                 } else {
                     attempts[0]++;
                     if (attempts[0] >= 10) {
+                        taskHolder[0].cancel();
                         System.err.println("Failed to process plugin message after 10 attempts: " + identifier);
                     }
                 }
