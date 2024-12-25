@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,30 +48,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Maven.SimpleLobby [clean,package].executor": "Run",
-    "Maven.SimpleLobby [clean].executor": "Run",
-    "Maven.SimpleLobby [dependency:tree...].executor": "Run",
-    "Maven.SimpleLobby [package].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/anton/.m2/repository/net/minestom/minestom-snapshots/1_21_4-35869c40fb/minestom-snapshots-1_21_4-35869c40fb.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SimpleLobby [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SimpleLobby [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SimpleLobby [dependency:tree...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.SimpleLobby [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/.m2/repository/net/minestom/minestom-snapshots/1_21_4-35869c40fb/minestom-snapshots-1_21_4-35869c40fb.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\anton\IdeaProjects\SimpleLobby\src\main\java\de\voasis" />
@@ -281,23 +283,8 @@
       <workItem from="1735052609483" duration="2120000" />
       <workItem from="1735068590861" duration="8000" />
       <workItem from="1735068813207" duration="181000" />
-      <workItem from="1735135431933" duration="4544000" />
-    </task>
-    <task id="LOCAL-00047" summary="Update">
-      <option name="closed" value="true" />
-      <created>1731788313571</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1731788313571</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Update">
-      <option name="closed" value="true" />
-      <created>1731788611387</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1731788611387</updated>
+      <workItem from="1735135431933" duration="4926000" />
+      <workItem from="1735140448362" duration="11000" />
     </task>
     <task id="LOCAL-00049" summary="Update">
       <option name="closed" value="true" />
@@ -675,7 +662,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735139756443</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735140113258</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1735140113258</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735140355563</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1735140355563</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
