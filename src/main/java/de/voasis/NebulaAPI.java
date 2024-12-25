@@ -11,20 +11,39 @@ import net.minestom.server.entity.metadata.display.AbstractDisplayMeta;
 import net.minestom.server.entity.metadata.display.TextDisplayMeta;
 import net.minestom.server.event.player.PlayerDisconnectEvent;
 import net.minestom.server.event.player.PlayerPluginMessageEvent;
+import net.minestom.server.network.ConnectionState;
 import net.minestom.server.scoreboard.Sidebar;
 
 public class NebulaAPI {
     public NebulaAPI() {
-        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event ->
-                event.getPlayer().getPassengers().forEach(Entity::remove));
+        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
             System.out.println("Channel: " + identifier + " Message: " + message);
-            switch (identifier) {
-                case "nebula:main" -> handleNametagEvent(message);
-                case "nebula:scoreboard" -> handleScoreboardEvent(message);
-                default -> System.out.println("Unknown identifier: " + identifier);
+            Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(message.split(":")[0]);
+            int attempts = 0;
+            while (attempts < 10) {
+                if (player.getPlayerConnection().getConnectionState().equals(ConnectionState.PLAY)) {
+                    switch (identifier) {
+                        case "nebula:main" -> handleNametagEvent(message);
+                        case "nebula:scoreboard" -> handleScoreboardEvent(message);
+                        default -> System.out.println("Unknown identifier: " + identifier);
+                    }
+                    break;
+                } else {
+                    attempts++;
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        System.err.println("Interrupted while waiting for player connection state: " + e.getMessage());
+                        break;
+                    }
+                }
+            }
+            if (attempts == 10) {
+                System.err.println("Failed to process plugin message after 10 attempts: " + identifier);
             }
         });
     }

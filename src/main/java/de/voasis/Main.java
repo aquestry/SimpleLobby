@@ -30,7 +30,6 @@ public class Main {
         NPC parkourNPC = new NPC("Parkour", instance, new Pos(1.5, 1, 8.5, 180, 0), "BastiGHG");
         NPC duelsNPC = new NPC("Duels", instance, new Pos(-1.5, 1, 8.5, 180, 0), "Wichtiger");
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
-            Player player = event.getPlayer();
             event.setSpawningInstance(instance);
             event.getPlayer().setRespawnPoint(new Pos(0.5, 2, 0.5));
         });
