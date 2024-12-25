@@ -40,10 +40,12 @@ public class NebulaAPI {
                     if (player != null) {
                         Sidebar sidebar = new Sidebar(MiniMessage.miniMessage().deserialize(title));
                         for (int i = 0; i < lines.length; i++) {
-                            System.out.println("Line: " + lines[i]);
+                            String lineId = "line_" + i;
+                            String lineText = lines[i];
+                            System.out.println("Line " + i + ": " + lineText);
                             sidebar.createLine(new Sidebar.ScoreboardLine(
-                                    "line_" + i,
-                                    MiniMessage.miniMessage().deserialize(lines[i]),
+                                    lineId,
+                                    MiniMessage.miniMessage().deserialize(lineText),
                                     lines.length - i,
                                     Sidebar.NumberFormat.blank()
                             ));
