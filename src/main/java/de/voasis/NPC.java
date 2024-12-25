@@ -20,7 +20,7 @@ public class NPC extends Entity {
         setNoGravity(true);
         setInstance(instance);
         scheduleNextTick(entity -> teleport(spawn));
-        Main.nameTagHandler.newNametag(this, "<bold>"+nameNPC+"</bold>");
+        Main.nebulaAPI.createNametag(this, "<bold>"+nameNPC+"</bold>");
     }
     @Override
     public void updateNewViewer(@NotNull Player player) {
