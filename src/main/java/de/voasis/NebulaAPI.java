@@ -24,7 +24,6 @@ public class NebulaAPI {
             String message = event.getMessageString();
             Player player = event.getPlayer();
             if (!identifier.equals("nebula:main") && !identifier.equals("nebula:scoreboard")) { return; }
-            System.out.println("Channel: " + identifier + " Message: " + message);
             final int[] attempts = {0};
             final Task[] taskHolder = new Task[1];
             taskHolder[0] = MinecraftServer.getSchedulerManager().buildTask(() -> {
@@ -50,8 +49,7 @@ public class NebulaAPI {
             String playerName = parts[0];
             String newName = parts[1].split("#")[2] + playerName;
             Player player = MinecraftServer.getConnectionManager().getOnlinePlayerByUsername(playerName);
-            if (player != null && player.getPassengers().isEmpty()) {
-                System.out.println("Player: " + playerName + " received name: " + newName);
+            if (player != null) {
                 createNametag(player, newName);
             }
         } catch (Exception e) {
