@@ -15,8 +15,11 @@ import net.minestom.server.network.ConnectionState;
 import net.minestom.server.scoreboard.Sidebar;
 import net.minestom.server.timer.Task;
 import net.minestom.server.timer.TaskSchedule;
+import java.util.HashMap;
 
 public class NebulaAPI {
+    private static HashMap<Player, Sidebar> cachedSidebars = new HashMap<>();
+    private static HashMap<Object, TextDisplayMeta> cachedNames = new HashMap<>();
     public NebulaAPI() {
         Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
@@ -83,6 +86,14 @@ public class NebulaAPI {
                             Sidebar.NumberFormat.blank()
                     ));
                 }
+                if(cachedSidebars.containsKey(player)) {
+                    if(cachedSidebars.get(player).equals(sidebar)) {
+                        return;
+                    } else {
+                        cachedSidebars.remove(player);
+                    }
+                }
+                cachedSidebars.put(player, sidebar);
                 sidebar.addViewer(player);
                 System.out.println("Scoreboard successfully updated for: " + username);
             } else {
@@ -102,6 +113,14 @@ public class NebulaAPI {
         meta.setBackgroundColor(0x00000000);
         meta.setShadow(true);
         meta.setTranslation(new Vec(0, 0.3, 0));
+        if(cachedNames.containsKey(entityHolder)) {
+            if(cachedNames.get(entityHolder).equals(meta)) {
+                return;
+            } else {
+                cachedNames.remove(entityHolder);
+            }
+        }
+        cachedNames.put(entityHolder, meta);
         if (entityHolder instanceof Player player) {
             player.addPassenger(entity);
             player.setDisplayName(displayName);
