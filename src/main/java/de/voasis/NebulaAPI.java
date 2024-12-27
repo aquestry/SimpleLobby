@@ -19,9 +19,9 @@ import java.util.HashMap;
 
 public class NebulaAPI {
     private static HashMap<Player, Sidebar> cachedSidebars = new HashMap<>();
-    private static HashMap<Player, TextDisplayMeta> nameTags = new HashMap<>();
+    private static HashMap<Player, Entity> nameTags = new HashMap<>();
     public NebulaAPI() {
-        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
+        Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> clearPassengers(event.getPlayer()));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
             String identifier = event.getIdentifier();
             String message = event.getMessageString();
@@ -47,7 +47,6 @@ public class NebulaAPI {
             }).repeat(TaskSchedule.seconds(1)).delay(TaskSchedule.seconds(1)).schedule();
         });
     }
-
     private void handleNametagEvent(String message) {
         try {
             String[] parts = message.split(":");
@@ -62,7 +61,6 @@ public class NebulaAPI {
             System.err.println("Error handling nametag event: " + e.getMessage());
         }
     }
-
     private void handleScoreboardEvent(String message) {
         try {
             String[] parts = message.split("&");
@@ -103,7 +101,6 @@ public class NebulaAPI {
             System.err.println("Error handling scoreboard event: " + e.getMessage());
         }
     }
-
     public void createNametag(Object entityHolder, String name) {
         Component displayName = Main.mm.deserialize(name);
         Entity entity = new Entity(EntityType.TEXT_DISPLAY);
@@ -114,15 +111,14 @@ public class NebulaAPI {
         meta.setShadow(true);
         meta.setTranslation(new Vec(0, 0.3, 0));
         if (entityHolder instanceof Player player) {
-            if(nameTags.containsKey(player)) {
-                nameTags.get(player).setText(displayName);
-            } else {
-                player.addPassenger(entity);
-                player.setDisplayName(displayName);
-                nameTags.put(player, meta);
-            }
+            clearPassengers(player);
+            player.addPassenger(entity);
+            player.setDisplayName(displayName);
         } else if (entityHolder instanceof NPC npc) {
             npc.addPassenger(entity);
         }
+    }
+    private void clearPassengers(Player player) {
+        player.getPassengers().forEach(Entity::remove);
     }
 }
