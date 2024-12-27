@@ -103,6 +103,7 @@ public class NebulaAPI {
             clearPassengers(player);
             player.addPassenger(entity);
             player.setDisplayName(displayName);
+            System.out.println("Nametag successfully updated for: " + player.getUsername() + ", with: " + displayName);
         } else if (entityHolder instanceof NPC npc) {
             npc.addPassenger(entity);
         }
