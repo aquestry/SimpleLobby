@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class NebulaAPI {
     private static HashMap<Player, Sidebar> cachedSidebars = new HashMap<>();
-    private static HashMap<Object, TextDisplayMeta> cachedNames = new HashMap<>();
+    private static HashMap<Player, TextDisplayMeta> nameTags = new HashMap<>();
     public NebulaAPI() {
         Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> event.getPlayer().getPassengers().forEach(Entity::remove));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
@@ -113,17 +113,14 @@ public class NebulaAPI {
         meta.setBackgroundColor(0x00000000);
         meta.setShadow(true);
         meta.setTranslation(new Vec(0, 0.3, 0));
-        if(cachedNames.containsKey(entityHolder)) {
-            if(cachedNames.get(entityHolder).equals(meta)) {
-                return;
-            } else {
-                cachedNames.remove(entityHolder);
-            }
-        }
-        cachedNames.put(entityHolder, meta);
         if (entityHolder instanceof Player player) {
-            player.addPassenger(entity);
-            player.setDisplayName(displayName);
+            if(nameTags.containsKey(player)) {
+                nameTags.get(player).setText(displayName);
+            } else {
+                player.addPassenger(entity);
+                player.setDisplayName(displayName);
+                nameTags.put(player, meta);
+            }
         } else if (entityHolder instanceof NPC npc) {
             npc.addPassenger(entity);
         }
