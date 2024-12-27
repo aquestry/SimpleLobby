@@ -15,11 +15,8 @@ import net.minestom.server.network.ConnectionState;
 import net.minestom.server.scoreboard.Sidebar;
 import net.minestom.server.timer.Task;
 import net.minestom.server.timer.TaskSchedule;
-import java.util.HashMap;
 
 public class NebulaAPI {
-    private static HashMap<Player, Sidebar> cachedSidebars = new HashMap<>();
-    private static HashMap<Player, Entity> nameTags = new HashMap<>();
     public NebulaAPI() {
         Main.globalEventHandler.addListener(PlayerDisconnectEvent.class, event -> clearPassengers(event.getPlayer()));
         Main.globalEventHandler.addListener(PlayerPluginMessageEvent.class, event -> {
@@ -84,14 +81,6 @@ public class NebulaAPI {
                             Sidebar.NumberFormat.blank()
                     ));
                 }
-                if(cachedSidebars.containsKey(player)) {
-                    if(cachedSidebars.get(player).equals(sidebar)) {
-                        return;
-                    } else {
-                        cachedSidebars.remove(player);
-                    }
-                }
-                cachedSidebars.put(player, sidebar);
                 sidebar.addViewer(player);
                 System.out.println("Scoreboard successfully updated for: " + username);
             } else {
