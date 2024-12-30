@@ -1,4 +1,4 @@
-FROM openjdk:21-slim
+FROM amazoncorretto:latest
 ENV JAVA_HOME=/usr/local/openjdk-21
 ENV PATH="$JAVA_HOME/bin:$PATH"
 WORKDIR /app
