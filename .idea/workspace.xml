@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -301,14 +303,9 @@
       <workItem from="1735324112254" duration="696000" />
       <workItem from="1735418681293" duration="23000" />
       <workItem from="1735517337888" duration="670000" />
-    </task>
-    <task id="LOCAL-00082" summary="Update">
-      <option name="closed" value="true" />
-      <created>1734799520296</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1734799520297</updated>
+      <workItem from="1735518089253" duration="1408000" />
+      <workItem from="1735519711445" duration="46000" />
+      <workItem from="1735519788778" duration="163000" />
     </task>
     <task id="LOCAL-00083" summary="Update">
       <option name="closed" value="true" />
@@ -694,7 +691,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735517993838</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735519554771</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1735519554771</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
