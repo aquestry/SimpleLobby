@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/docker-publish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -304,23 +300,7 @@
       <workItem from="1735319306818" duration="2991000" />
       <workItem from="1735324112254" duration="696000" />
       <workItem from="1735418681293" duration="23000" />
-      <workItem from="1735517337888" duration="413000" />
-    </task>
-    <task id="LOCAL-00080" summary="Update">
-      <option name="closed" value="true" />
-      <created>1734797257537</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1734797257537</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Update">
-      <option name="closed" value="true" />
-      <created>1734797744688</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1734797744688</updated>
+      <workItem from="1735517337888" duration="670000" />
     </task>
     <task id="LOCAL-00082" summary="Update">
       <option name="closed" value="true" />
@@ -698,7 +678,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735517554784</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735517766668</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1735517766668</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Update">
+      <option name="closed" value="true" />
+      <created>1735517993838</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1735517993838</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
