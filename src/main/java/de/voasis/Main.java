@@ -11,13 +11,17 @@ import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.LightingChunk;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.network.packet.server.common.PluginMessagePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.nio.charset.StandardCharsets;
 
-
 public class Main {
+
     public static GlobalEventHandler globalEventHandler;
     public static NebulaAPI nebulaAPI;
     public static MiniMessage mm = MiniMessage.miniMessage();
+    public static final Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         var server = MinecraftServer.init();
         var instance = MinecraftServer.getInstanceManager().createInstanceContainer();
@@ -36,7 +40,7 @@ public class Main {
         globalEventHandler.addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {
                 if(event.getTarget().equals(parkourNPC)) {
-                    System.out.println("Parkour got clicked!");
+                    logger.info("Parkour got clicked!");
                     String message = "queue:" + player.getUsername() + ":Parkour";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
@@ -45,7 +49,7 @@ public class Main {
                     player.sendPacket(packet);
                 }
                 if(event.getTarget().equals(duelsNPC)) {
-                    System.out.println("Duels got clicked!");
+                    logger.info("Duels got clicked!");
                     String message = "queue:" + player.getUsername() + ":Duels";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",

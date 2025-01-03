@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class NPC extends Entity {
+
     private final String nameNPC;
     private final PlayerSkin cachedSkin;
+
     public NPC(String name, Instance instance, Pos spawn, String skinName) {
         super(EntityType.PLAYER);
         cachedSkin = PlayerSkin.fromUsername(skinName);
@@ -22,6 +24,7 @@ public class NPC extends Entity {
         scheduleNextTick(entity -> teleport(spawn));
         Main.nebulaAPI.createNametag(this, "<bold>"+nameNPC+"</bold>");
     }
+
     @Override
     public void updateNewViewer(@NotNull Player player) {
         var properties = new ArrayList<PlayerInfoUpdatePacket.Property>();
