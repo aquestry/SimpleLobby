@@ -83,12 +83,12 @@ public class NebulaAPI {
                     ));
                 }
                 sidebar.addViewer(player);
-                logger.info("Scoreboard successfully updated for: " + username);
+                logger.info("Scoreboard successfully updated for: {}", username);
             } else {
                 System.err.println("Player not found: " + username);
             }
         } catch (Exception e) {
-            logger.info("Error handling scoreboard event: " + e.getMessage());
+            logger.info("Error handling scoreboard event: {}", e.getMessage());
         }
     }
 
@@ -105,7 +105,7 @@ public class NebulaAPI {
             clearPassengers(player);
             player.addPassenger(entity);
             player.setDisplayName(displayName);
-            logger.info("Nametag successfully updated for: " + player.getUsername() + ", with: " + displayName);
+            logger.info("Nametag successfully updated for: {}, with: {}", player.getUsername(), displayName);
         } else if (entityHolder instanceof NPC npc) {
             npc.addPassenger(entity);
         }

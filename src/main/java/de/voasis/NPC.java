@@ -12,11 +12,9 @@ import java.util.Map;
 public class NPC extends Entity {
 
     private final String nameNPC;
-    private final PlayerSkin cachedSkin;
 
-    public NPC(String name, Instance instance, Pos spawn, String skinName) {
+    public NPC(String name, Instance instance, Pos spawn) {
         super(EntityType.PLAYER);
-        cachedSkin = PlayerSkin.fromUsername(skinName);
         nameNPC = name;
         setBoundingBox(0, 0, 0);
         setNoGravity(true);
@@ -28,7 +26,6 @@ public class NPC extends Entity {
     @Override
     public void updateNewViewer(@NotNull Player player) {
         var properties = new ArrayList<PlayerInfoUpdatePacket.Property>();
-        properties.add(new PlayerInfoUpdatePacket.Property("textures", cachedSkin.getTextures(), cachedSkin.getSignature()));
         var entry = new PlayerInfoUpdatePacket.Entry(getUuid(), nameNPC, properties, false, 0, GameMode.CREATIVE, null, null, 1);
         player.sendPacket(new PlayerInfoUpdatePacket(PlayerInfoUpdatePacket.Action.ADD_PLAYER, entry));
         super.updateNewViewer(player);
