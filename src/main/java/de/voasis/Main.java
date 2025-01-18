@@ -40,7 +40,6 @@ public class Main {
         globalEventHandler.addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {
                 if(event.getTarget().equals(parkourNPC)) {
-                    logger.info("Parkour got clicked!");
                     String message = "queue:" + player.getUsername() + ":Parkour";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
@@ -49,7 +48,6 @@ public class Main {
                     player.sendPacket(packet);
                 }
                 if(event.getTarget().equals(duelsNPC)) {
-                    logger.info("Duels got clicked!");
                     String message = "queue:" + player.getUsername() + ":Duels";
                     PluginMessagePacket packet = new PluginMessagePacket(
                             "nebula:main",
