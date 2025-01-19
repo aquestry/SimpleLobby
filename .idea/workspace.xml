@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +95,7 @@
       <command value="mvn dependency:purge-local-repository" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -315,14 +318,10 @@
       <workItem from="1735925303656" duration="17000" />
       <workItem from="1736109886997" duration="49000" />
       <workItem from="1736950407996" duration="204000" />
-    </task>
-    <task id="LOCAL-00091" summary="Update">
-      <option name="closed" value="true" />
-      <created>1735138601120</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1735138601120</updated>
+      <workItem from="1737236271094" duration="75000" />
+      <workItem from="1737238753282" duration="37000" />
+      <workItem from="1737241091582" duration="64000" />
+      <workItem from="1737284833279" duration="2454000" />
     </task>
     <task id="LOCAL-00092" summary="Update">
       <option name="closed" value="true" />
@@ -708,7 +707,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736950561878</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Update">
+      <option name="closed" value="true" />
+      <created>1737236302690</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1737236302690</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

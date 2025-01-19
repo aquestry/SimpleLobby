@@ -31,11 +31,11 @@ public class Main {
         instance.setChunkSupplier(LightingChunk::new);
         globalEventHandler = MinecraftServer.getGlobalEventHandler();
         nebulaAPI = new NebulaAPI();
-        NPC parkourNPC = new NPC("Parkour", instance, new Pos(1.5, 1, 8.5, 180, 0));
-        NPC duelsNPC = new NPC("Duels", instance, new Pos(-1.5, 1, 8.5, 180, 0));
+        NPC parkourNPC = new NPC("Parkour", instance, new Pos(1.5, 1, 4.5, 180, 0));
+        NPC duelsNPC = new NPC("Duels", instance, new Pos(-0.5, 1, 4.5, 180, 0));
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
-            event.getPlayer().setRespawnPoint(new Pos(0, 2, 0));
+            event.getPlayer().setRespawnPoint(new Pos(0.5, 1, 0.5));
         });
         globalEventHandler.addListener(EntityAttackEvent.class, event -> {
             if(event.getEntity() instanceof Player player) {
