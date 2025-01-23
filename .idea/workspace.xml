@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NebulaAPI.java" beforeDir="false" />
-    </list>
+    <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,15 +321,7 @@
       <workItem from="1737284833279" duration="3995000" />
       <workItem from="1737289901707" duration="26000" />
       <workItem from="1737634190078" duration="1796000" />
-      <workItem from="1737651414434" duration="1648000" />
-    </task>
-    <task id="LOCAL-00094" summary="Update">
-      <option name="closed" value="true" />
-      <created>1735139505650</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1735139505650</updated>
+      <workItem from="1737651414434" duration="2092000" />
     </task>
     <task id="LOCAL-00095" summary="Update">
       <option name="closed" value="true" />
@@ -721,7 +707,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737287927955</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="Update">
+      <option name="closed" value="true" />
+      <created>1737655919430</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1737655919430</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
