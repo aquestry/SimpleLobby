@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="66fe21db-d7ea-4651-a246-ae7578bb3e37" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/voasis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NPC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/voasis/NebulaAPI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +98,7 @@
       <command value="mvn dependency:purge-local-repository" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.SimpleLobby [clean,package]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.voasis.Main" />
       <module name="SimpleLobby" />
@@ -321,23 +324,10 @@
       <workItem from="1737236271094" duration="75000" />
       <workItem from="1737238753282" duration="37000" />
       <workItem from="1737241091582" duration="64000" />
-      <workItem from="1737284833279" duration="2454000" />
-    </task>
-    <task id="LOCAL-00092" summary="Update">
-      <option name="closed" value="true" />
-      <created>1735138908387</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1735138908388</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Update">
-      <option name="closed" value="true" />
-      <created>1735139291820</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1735139291820</updated>
+      <workItem from="1737284833279" duration="3995000" />
+      <workItem from="1737289901707" duration="26000" />
+      <workItem from="1737634190078" duration="1796000" />
+      <workItem from="1737651414434" duration="1648000" />
     </task>
     <task id="LOCAL-00094" summary="Update">
       <option name="closed" value="true" />
@@ -715,7 +705,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737236302690</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Update">
+      <option name="closed" value="true" />
+      <created>1737287912028</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1737287912029</updated>
+    </task>
+    <task id="LOCAL-00142" summary="Update">
+      <option name="closed" value="true" />
+      <created>1737287927955</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1737287927955</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

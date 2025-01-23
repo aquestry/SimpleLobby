@@ -26,7 +26,18 @@
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.7</version>
         </dependency>
+        <dependency>
+            <groupId>de.voasis</groupId>
+            <artifactId>NebulaAPI</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/aquestry/NebulaAPI</url>
+        </repository>
+    </repositories>
     <build>
         <finalName>server</finalName>
         <plugins>

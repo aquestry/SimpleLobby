@@ -30,7 +30,7 @@ public class Main {
         if (vsecret != null) { VelocityProxy.enable(vsecret); }
         instance.setChunkSupplier(LightingChunk::new);
         globalEventHandler = MinecraftServer.getGlobalEventHandler();
-        nebulaAPI = new NebulaAPI();
+        nebulaAPI = new NebulaAPI(globalEventHandler, logger);
         NPC parkourNPC = new NPC("Parkour", instance, new Pos(1.5, 1, 4.5, 180, 0));
         NPC duelsNPC = new NPC("Duels", instance, new Pos(-0.5, 1, 4.5, 180, 0));
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
