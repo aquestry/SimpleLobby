@@ -48,8 +48,8 @@
   </build>
   <repositories>
     <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/aquestry/NebulaAPI</url>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
     </repository>
   </repositories>
   <properties>
