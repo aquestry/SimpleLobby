@@ -10,8 +10,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
       - run: mvn package -DskipTests
+      - run: mv target/server.jar .
       - uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - run: docker buildx build --platform linux/amd64 -t anton691/simple-lobby:latest --push --build-arg JAR_FILE=target/server.jar .
+      - run: docker buildx build --platform linux/amd64 -t anton691/simple-lobby:latest --push .
