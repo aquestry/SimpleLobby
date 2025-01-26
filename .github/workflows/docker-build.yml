@@ -1,4 +1,4 @@
-name: Docker CI
+name: Build & Push
 on: push
 jobs:
   Build:
@@ -15,6 +15,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build & Push
         run: |
           docker buildx create --use
           docker buildx build \
